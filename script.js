@@ -92,43 +92,41 @@ function onSignificantSwipe(container, callback, threshold = 50) {
   let touchStartY = 0;
   let touchEndX = 0;
   let touchEndY = 0;
+  let isSwipe = false;
 
   container.addEventListener('touchstart', (event) => {
-    event.preventDefault()
       touchStartX = event.changedTouches[0].clientX;
       touchStartY = event.changedTouches[0].clientY;
+      isSwipe = false; // Reset swipe detection
   });
 
   container.addEventListener('touchend', (event) => {
       touchEndX = event.changedTouches[0].clientX;
       touchEndY = event.changedTouches[0].clientY;
 
-      handleSwipe();
-  });
-
-  function handleSwipe() {
       const deltaX = touchEndX - touchStartX;
       const deltaY = touchEndY - touchStartY;
 
+      // Check if it's a swipe
       if (Math.abs(deltaX) > threshold || Math.abs(deltaY) > threshold) {
+          isSwipe = true;
           if (Math.abs(deltaX) > Math.abs(deltaY)) {
-              // Horizontal swipe
-              if (deltaX > 0) {
-                  callback('right'); // Swipe to the right
-              } else {
-                  callback('left'); // Swipe to the left
-              }
+              callback(deltaX > 0 ? 'right' : 'left'); // Horizontal swipe
           } else {
-              // Vertical swipe
-              if (deltaY > 0) {
-                  callback('down'); // Swipe down
-              } else {
-                  callback('up'); // Swipe up
-              }
+              callback(deltaY > 0 ? 'down' : 'up'); // Vertical swipe
           }
       }
-  }
+  });
+
+  container.addEventListener('click', (event) => {
+      if (isSwipe) {
+          // If it was a swipe, prevent default action for the click
+          event.preventDefault();
+      }
+      // If it’s a normal click, let the default action occur
+  });
 }
+
 
 // Adding swipe detection to the container
 const container = document.querySelector(".container")
