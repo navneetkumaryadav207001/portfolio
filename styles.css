@@ -3,7 +3,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
 }
 body {
   margin: 0;
@@ -102,6 +102,7 @@ img {
 }
 
 #personal {
+  z-index: 0;
   opacity: 1;          /* Initially hidden */
   visibility: hidden;  /* Initially hidden */
   transition: margin-left 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s,margin-top 0.3s ease; /* Transition both margin-left and opacity */
@@ -159,8 +160,7 @@ img {
 }
 
 .face-left:hover + #personal {
-  z-index: 1;
-  opacity: 1;          /* Fade in */
+  z-index: 1;          /* Fade in */
   visibility: visible; /* Make it visible */
   margin-left: 0%;     /* Move it into view */
   margin-top: 64vh;
@@ -173,6 +173,7 @@ img {
   margin-top: 64vh;
   transition: margin-left 0.3s ease, opacity 0.3s ease,margin-top 0.3s ease; /* Ensure smooth transitions */
 }
+
 
 
 img:hover{

@@ -136,13 +136,13 @@ onSignificantSwipe(container, (direction) => {
   switch (direction) {
       case 'left':
         if(!bool)
-          {faceLeft.style.zIndex = 1; bool = true;}
-          else{faceLeft.style.zIndex = 0;bool = false;}
+          {faceLeft.style.zIndex = 1; bool = true;personal.style.opacity = 1;}
+          else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;}
           break;
         case 'right':
           if(!bool)
-            {faceLeft.style.zIndex = 1; bool = true;}
-            else{faceLeft.style.zIndex = 0;bool = false;}
+            {faceLeft.style.zIndex = 1; bool = true;personal.style.opacity = 1;}
+            else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;}
             break;
   }
 });
