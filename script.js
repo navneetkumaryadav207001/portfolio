@@ -1,7 +1,4 @@
-function redirectTo(url) {
-    window.location.href = url;
-  }
-  const faceLeft = document.querySelector('.face-left');
+const faceLeft = document.querySelector('.face-left');
 const faceRight = document.querySelector('.face-right');
 const thunder = document.querySelector('.thunder');
 const personal = document.querySelector("#personal")
