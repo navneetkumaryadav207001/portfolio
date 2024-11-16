@@ -14,6 +14,9 @@ body {
   background-color: #f0f0f0;
 }
 
+#change{
+  display: none;
+}
 
 
 #start{
@@ -152,9 +155,11 @@ img {
     font-style: normal;
     font-variation-settings:
       "MORF" 0;
+
 }
 
 .face-left:hover + #personal {
+  z-index: 1;
   opacity: 1;          /* Fade in */
   visibility: visible; /* Make it visible */
   margin-left: 0%;     /* Move it into view */
@@ -218,7 +223,35 @@ body {
     .thunder{
       display: none;
     }
+    #personal {
+      font-size: 4.5vw;
+
+    }
+ 
+    .face-right:hover + #professional {
+      opacity: 1;          /* Fade in */
+      visibility: visible; /* Make it visible */
+      margin-left: 72%;     /* Move it into view */
+      margin-top: 64vh;
+      transition: margin-left 0.3s ease, opacity 0.3s ease,margin-top 0.3s ease; /* Ensure smooth transitions */
+      font-size: 15px;
+    }
     /* Styles go here */
+    #change{
+      display: block;
+      position: absolute;
+      z-index: 1;
+      font-size: 25px;
+    font-family: "Kablammo", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "MORF" 0;
+      margin-top: 90vh;
+      margin-left:calc(50% - 43px);
+      color: #f0f0f0;
+    }
     body {
       margin: 0;
       display: flex;
@@ -261,6 +294,7 @@ body {
       opacity: 0;
       transition: opacity 0.3s ease;
     }
+
     
     
     
@@ -274,7 +308,6 @@ body {
     
     
     .face-right {
-      clip-path: polygon(0 0, 15% 0, 90% 100%, 0 100%);
       height: 100vh;
       border:1px black solid;
       filter: brightness(50%);
@@ -285,18 +318,5 @@ body {
       height: 100vh;
       width: 100vw;
       filter: brightness(50%);
-    }
-    .face-left:hover +.face-right {
-      clip-path: polygon(0 0, 0 0, 90% 100%, 0 100%);
-      transition: clip-path ease 0.5s;
-      
-    }
-    .face-right:hover {
-      clip-path: polygon(0 0, 25% 0, 90% 100%, 0 100%);
-      transition: clip-path ease 0.5s,filter ease 0.5s;
-      filter: brightness(100%);
-    }
-    .face-left:hover{
-      filter: brightness(100%);
     }
   }

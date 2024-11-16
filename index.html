@@ -16,20 +16,21 @@
     <p class="clickable">click anywhere to start</p>
   </div>
   <div class="container">
-    <div class=" half face-left" onclick="redirectTo('https://site1.com')">
-      
-      <img src="sukuna.jpg" alt="Face 1 Eyes Closed" class="clickable default" srcset="sakuna.jpg 600w,sakunalp.png 1600w">
-      
+    <div class=" half face-left">
+      <img src="sakunalp.png" alt="Face 1 Eyes Closed" class="clickable default" id="left">
     </div>
     <div id="personal">
       Personal Website
     </div>
     <div class="thunder"></div>
-    <div class="half face-right" onclick="redirectTo('https://site2.com')">
-      <img src="yuji.jpg" alt="Face 2 Eyes Closed" class="clickable default" srcset="yuji.jpg 600w,file.png 1600w">
+    <div class="half face-right">
+      <img src="file.png" alt="Face 2 Eyes Closed" class="clickable default" id ="right">
     </div>
     <div id="professional">
       Professional Website
+    </div>
+    <div id="change" onclick="change()">
+      Change
     </div>
   </div>
   

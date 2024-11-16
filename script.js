@@ -31,6 +31,8 @@ faceRight.addEventListener('mouseenter', () => {
 
 function start(){
   document.getElementById("start").remove();
+  document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
 }
 
 
@@ -77,4 +79,12 @@ function resetCursor()
   cursorInner.style.height = "16px";
   cursorInner.style.backgroundColor = "white";
   cursorInner.style.border = "1px solid black";
+}
+let bool = false;
+
+function change()
+{
+  if(!bool)
+  {faceLeft.style.zIndex = 1; bool = true;}
+  else{faceLeft.style.zIndex = 0;bool = false;}
 }
