@@ -3,17 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Face Merge</title>
+  <title>MEEEEE!!!!!!</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <div id="start" onclick="start()">
+    <p>click anywhere to start</p>
+  </div>
   <div class="container">
     <div class="half face-left" onclick="redirectTo('https://site1.com')">
-      <img src="sukuna.jpg" alt="Face 1 Eyes Closed" class="default">
+      
+      <img src="sukuna.jpg" alt="Face 1 Eyes Closed" class="default" srcset="sakuna.jpg 600w,sakunalp.png 1600w">
+      
     </div>
+    <div id="personal">
+      Personal Website
+    </div>
+    <div class="thunder"></div>
     <div class="half face-right" onclick="redirectTo('https://site2.com')">
-      <img src="yuji.jpg" alt="Face 2 Eyes Closed" class="default">
+      <img src="yuji.jpg" alt="Face 2 Eyes Closed" class="default" srcset="yuji.jpg 600w,file.png 1600w">
+    </div>
+    <div id="professional">
+      Professional Website
     </div>
   </div>
   

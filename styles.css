@@ -1,80 +1,281 @@
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+
+
+#start{
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#start p{
+  font-size: 50px;
+  transition: transform 0.2s ease;
+  font-family: "Kablammo", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 0;
+    text-align: center;
+}
+#start p:hover{
+  transform: scale(1.2)
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.half {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  transition: transform ease 0.5s;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: 100hv;
+  overflow: hidden;
+}
+
+
+.face-right {
+  height: 100vh;
+  border:1px black solid;
+  filter: brightness(50%);
+  width: 100%;
+}
+.face-left {
+  margin-left: 0vw;
+  height: 100vh;
+  width: 100%;
+  filter: brightness(50%);
+}
+.face-right:hover {
+  background-color: #0d5ee5;
+  transition: clip-path ease 0.5s,filter ease 0.5s;
+  filter: brightness(100%);
+  overflow: hidden;
+}
+.face-left:hover{
+  background-color: #de1b32;
+  transition: clip-path ease 0.5s,filter ease 0.5s;
+  filter: brightness(100%);
+  overflow: hidden;
+}
+
+#personal {
+  opacity: 1;          /* Initially hidden */
+  visibility: hidden;  /* Initially hidden */
+  transition: margin-left 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s,margin-top 0.3s ease; /* Transition both margin-left and opacity */
+  margin-left: -20%;   /* Start offscreen */
+  position: fixed;
+  margin-top: 80vh;
+  color: white;
+  font-size: 2vw;
+  font-family: "Kablammo", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 0;
+  rotate: -35deg;
+  padding-left: 2px;
+  padding-right: 2px;
+  border: #0d5ee5;
+  border-radius: 5px;
+}
+#personal:hover{
+  opacity: 1;          /* Fade in */
+  visibility: visible; /* Make it visible */
+  margin-left: 0%;     /* Move it into view */
+  margin-top: 64vh;
+  transition: margin-left 0.3s ease, opacity 0.3s ease,margin-top 0.3s ease;
+  background-color: transparent;
+  color: black;
+}
+#professional:hover{
+  opacity: 1;          /* Fade in */
+  visibility: visible; /* Make it visible */
+  margin-left: 86%;     /* Move it into view */
+  margin-top: 64vh;
+  transition: margin-left 0.3s ease, opacity 0.3s ease,margin-top 0.3s ease;
+  background-color: transparent;
+  color: black;
+}
+#professional{
+    opacity: 1;          /* Initially hidden */
+    visibility: hidden;  /* Initially hidden */
+    transition: margin-left 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s,margin-top 0.3s ease; /* Transition both margin-left and opacity */
+    margin-left: 120%;   /* Start offscreen */
+    position: fixed;
+    margin-top: 70vh;
+    color: white;
+    font-size: 2vw;
+    font-family: "Kablammo", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "MORF" 0;
+}
+
+.face-left:hover + #personal {
+  opacity: 1;          /* Fade in */
+  visibility: visible; /* Make it visible */
+  margin-left: 0%;     /* Move it into view */
+  margin-top: 64vh;
+  transition: margin-left 0.3s ease, opacity 0.3s ease,margin-top 0.3s ease; /* Ensure smooth transitions */
+}
+.face-right:hover + #professional {
+  opacity: 1;          /* Fade in */
+  visibility: visible; /* Make it visible */
+  margin-left: 86%;     /* Move it into view */
+  margin-top: 64vh;
+  transition: margin-left 0.3s ease, opacity 0.3s ease,margin-top 0.3s ease; /* Ensure smooth transitions */
+}
+
+
+img:hover{
+  transform: scale(1.02);
+}
+
+.thunder {
+  width: 10px;
+  height: 100vh;
+  background: linear-gradient(to bottom, yellow, white, yellow);
+  animation: flicker 0.1s infinite;
+  box-shadow: 0 0px 5px 5px yellow;
+  transform: scale(1, 1);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+}
+@keyframes flicker {
+  0%, 100% {
+      opacity: 1;
   }
-  body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+  50% {
+      opacity: 0.5;
   }
-  
-  .container {
-    display: flex;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .half {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  
-  img.hover {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  
-  
-  .container {
-    display: flex;
-    position: relative;
-    width: 100vw;
-    height: 100hv;
-    overflow: hidden;
-  }
-  
-  
-  .face-right {
-    clip-path: polygon(0 0, 15% 0, 90% 100%, 0 100%);
-    height: 100vh;
-    border:1px black solid;
-    filter: brightness(50%);
-  }
-  .face-left {
-    position:fixed;
-    margin-left: 0vw;
-    height: 100vh;
-    width: 100vw;
-    filter: brightness(50%);
-  }
-  .face-left:hover +.face-right {
-    clip-path: polygon(0 0, 0 0, 90% 100%, 0 100%);
-    transition: clip-path ease 0.5s;
+}
+
+  @media (max-width: 600px) {
+    .thunder{
+      display: none;
+    }
+    /* Styles go here */
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
     
-  }
-  .face-right:hover {
-    clip-path: polygon(0 0, 25% 0, 90% 100%, 0 100%);
-    transition: clip-path ease 0.5s,filter ease 0.5s;
-    filter: brightness(100%);
-  }
-  .face-left:hover{
-    filter: brightness(100%);
+    .container {
+      display: flex;
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .half {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    img.hover {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    
+    
+    .container {
+      display: flex;
+      position: relative;
+      width: 100vw;
+      height: 100hv;
+      overflow: hidden;
+    }
+    
+    
+    .face-right {
+      clip-path: polygon(0 0, 15% 0, 90% 100%, 0 100%);
+      height: 100vh;
+      border:1px black solid;
+      filter: brightness(50%);
+    }
+    .face-left {
+      position:fixed;
+      margin-left: 0vw;
+      height: 100vh;
+      width: 100vw;
+      filter: brightness(50%);
+    }
+    .face-left:hover +.face-right {
+      clip-path: polygon(0 0, 0 0, 90% 100%, 0 100%);
+      transition: clip-path ease 0.5s;
+      
+    }
+    .face-right:hover {
+      clip-path: polygon(0 0, 25% 0, 90% 100%, 0 100%);
+      transition: clip-path ease 0.5s,filter ease 0.5s;
+      filter: brightness(100%);
+    }
+    .face-left:hover{
+      filter: brightness(100%);
+    }
   }
