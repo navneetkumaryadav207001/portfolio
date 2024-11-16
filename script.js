@@ -1,5 +1,5 @@
 function redirectTo(url) {
-    window.location.href = url;
+    console.log("happy");
   }
   const faceLeft = document.querySelector('.face-left');
 const faceRight = document.querySelector('.face-right');
