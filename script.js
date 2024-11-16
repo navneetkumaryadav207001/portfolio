@@ -32,3 +32,49 @@ faceRight.addEventListener('mouseenter', () => {
 function start(){
   document.getElementById("start").remove();
 }
+
+
+const cursorInner = document.createElement("div");
+cursorInner.classList.add("cursor-inner");
+
+document.body.appendChild(cursorInner);
+
+
+// Function to move the cursor elements
+document.addEventListener("mousemove", function (e) {
+  cursorInner.style.zIndex = 3;
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+  
+
+  cursorInner.style.left = `${mouseX}px`;
+  cursorInner.style.top = `${mouseY}px`;
+});
+
+const hoverableObject = document.querySelector(".clickable");
+
+// Increase cursor size on hover over the object
+hoverableObject.addEventListener("mouseenter", () => {
+  growCursor();
+});
+hoverableObject.addEventListener("mouseleave", () => {
+  resetCursor();
+});
+hoverableObject.addEventListener("click", () => {
+  resetCursor();
+});
+
+function growCursor()
+{
+  cursorInner.style.width = "20px"; // Increase inner cursor size
+  cursorInner.style.height = "20px";
+  cursorInner.style.backgroundColor = "black";
+  cursorInner.style.border = "1px solid white";
+}
+function resetCursor()
+{
+  cursorInner.style.width = "16px"; // Reset inner cursor size
+  cursorInner.style.height = "16px";
+  cursorInner.style.backgroundColor = "white";
+  cursorInner.style.border = "1px solid black";
+}

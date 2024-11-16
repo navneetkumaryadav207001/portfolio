@@ -184,6 +184,27 @@ img:hover{
   transition: transform 0.3s ease-in-out;
   z-index: 1;
 }
+/* Apply the custom cursor to the entire page */
+body {
+  cursor: none; /* Hide the default cursor */
+  position: relative; /* Required for positioning the custom cursor */
+}
+
+
+/* Inner circle of the cursor */
+.cursor-inner {
+  position: absolute;
+  width: 16px; /* Inner circle size */
+  height: 16px;
+  background-color: white; /* Inner circle color */
+  border: 1px solid black;
+  border-radius: 50%; /* Make it a circle */
+  pointer-events: none; /* Ensure it doesn't interfere with clicking */
+  transform: translate(-50%, -50%); /* Center the cursor */
+  transition: transform 0.1s ease;
+}
+
+
 @keyframes flicker {
   0%, 100% {
       opacity: 1;
