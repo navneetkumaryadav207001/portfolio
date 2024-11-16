@@ -85,3 +85,66 @@ function change()
   {faceLeft.style.zIndex = 1; bool = true;}
   else{faceLeft.style.zIndex = 0;bool = false;}
 }
+
+// Swipe detection function
+function onSignificantSwipe(container, callback, threshold = 50) {
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+  container.addEventListener('touchstart', (event) => {
+    event.preventDefault()
+      touchStartX = event.changedTouches[0].clientX;
+      touchStartY = event.changedTouches[0].clientY;
+  });
+
+  container.addEventListener('touchend', (event) => {
+      touchEndX = event.changedTouches[0].clientX;
+      touchEndY = event.changedTouches[0].clientY;
+
+      handleSwipe();
+  });
+
+  function handleSwipe() {
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+
+      if (Math.abs(deltaX) > threshold || Math.abs(deltaY) > threshold) {
+          if (Math.abs(deltaX) > Math.abs(deltaY)) {
+              // Horizontal swipe
+              if (deltaX > 0) {
+                  callback('right'); // Swipe to the right
+              } else {
+                  callback('left'); // Swipe to the left
+              }
+          } else {
+              // Vertical swipe
+              if (deltaY > 0) {
+                  callback('down'); // Swipe down
+              } else {
+                  callback('up'); // Swipe up
+              }
+          }
+      }
+  }
+}
+
+// Adding swipe detection to the container
+const container = document.querySelector(".container")
+
+// Call the swipe detection function and define custom logic for each direction
+onSignificantSwipe(container, (direction) => {
+  switch (direction) {
+      case 'left':
+        if(!bool)
+          {faceLeft.style.zIndex = 1; bool = true;}
+          else{faceLeft.style.zIndex = 0;bool = false;}
+          break;
+        case 'right':
+          if(!bool)
+            {faceLeft.style.zIndex = 1; bool = true;}
+            else{faceLeft.style.zIndex = 0;bool = false;}
+            break;
+  }
+});
