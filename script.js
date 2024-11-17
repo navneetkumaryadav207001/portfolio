@@ -38,7 +38,7 @@ faceLeft.addEventListener('mouseenter', () => {
   thunder.style.boxShadow = '-10px 0px 25px 5px yellow';
   hoverSound.currentTime = 0; // Rewind to the start
     hoverSound.play();
-    if(isMobileDevice())
+    if(isMobileDevice() && window.innerWidth <= 600)
     {
       change1.style.display = "flex";
     }
@@ -48,7 +48,7 @@ faceRight.addEventListener('mouseenter', () => {
   thunder.style.boxShadow = '10px 0px 25px 5px yellow';
   hoverSound.currentTime = 0; // Rewind to the start
     hoverSound.play();
-    if(isMobileDevice())
+    if(isMobileDevice() && window.innerWidth <= 600)
       {
         change2.style.display = "flex";
       }
@@ -58,7 +58,7 @@ faceRight.addEventListener('mouseenter', () => {
 [faceLeft, faceRight].forEach(face => {
   face.addEventListener('mouseleave', () => {
     thunder.style.boxShadow = '0 0px 5px 5px yellow';
-    if(isMobileDevice())
+    if(isMobileDevice() && window.innerWidth <= 600)
       {
         change1.style.display = "flex";
         change2.style.display = "flex";
@@ -169,12 +169,12 @@ onSignificantSwipe(container, (direction) => {
   switch (direction) {
       case 'left':
         if(!bool)
-          {faceLeft.style.zIndex = 1; bool = true;personal.style.opacity = 1;if(isMobileDevice)
+          {faceLeft.style.zIndex = 1; bool = true;personal.style.opacity = 1;if(isMobileDevice())
             {
               change1.style.display = "none";
               change2.style.display = "none";
             }}
-          else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;if(isMobileDevice)
+          else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;if(isMobileDevice())
             {
               change1.style.display = "none";
               change2.style.display = "none";
@@ -182,12 +182,12 @@ onSignificantSwipe(container, (direction) => {
           break;
         case 'right':
           if(!bool)
-            {faceLeft.style.zIndex = 1; bool = true;personal.style.opacity = 1;if(isMobileDevice)
+            {faceLeft.style.zIndex = 1; bool = true;personal.style.opacity = 1;if(isMobileDevice())
               {
                 change1.style.display = "none";
                 change2.style.display = "none";
               }}
-            else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;if(isMobileDevice)
+            else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;if(isMobileDevice())
               {
                 change1.style.display = "none";
                 change2.style.display = "none";
