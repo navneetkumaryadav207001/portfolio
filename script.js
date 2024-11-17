@@ -64,6 +64,8 @@ faceRight.addEventListener('mouseenter', () => {
       {
         change1.style.display = "none";
         change2.style.display = "none";
+        change1.style.zIndex = 1;
+              change2.style.zIndex = 1;
       }
   });
 });
@@ -180,6 +182,8 @@ onSignificantSwipe(container, (direction) => {
             {
               change1.style.display = "none";
               change2.style.display = "none";
+              change1.style.zIndex = 1;
+              change2.style.zIndex = 1;
             }}
           break;
         case 'right':
@@ -188,11 +192,15 @@ onSignificantSwipe(container, (direction) => {
               {
                 change1.style.display = "none";
                 change2.style.display = "none";
+                change1.style.zIndex = 1;
+              change2.style.zIndex = 1;
               }}
             else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;if(isMobileDevice())
               {
                 change1.style.display = "none";
                 change2.style.display = "none";
+                change1.style.zIndex = 1;
+              change2.style.zIndex = 1;
               }}
             break;
   }
