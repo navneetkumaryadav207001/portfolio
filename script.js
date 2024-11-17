@@ -41,6 +41,7 @@ faceLeft.addEventListener('mouseenter', () => {
     if(isMobileDevice() && window.innerWidth <= 600)
     {
       change1.style.display = "flex";
+      change1.style.zIndex = 2;
     }
 });
 
@@ -51,6 +52,7 @@ faceRight.addEventListener('mouseenter', () => {
     if(isMobileDevice() && window.innerWidth <= 600)
       {
         change2.style.display = "flex";
+        change2.style.zIndex = 2;
       }
     
 });
@@ -60,8 +62,8 @@ faceRight.addEventListener('mouseenter', () => {
     thunder.style.boxShadow = '0 0px 5px 5px yellow';
     if(isMobileDevice() && window.innerWidth <= 600)
       {
-        change1.style.display = "flex";
-        change2.style.display = "flex";
+        change1.style.display = "none";
+        change2.style.display = "none";
       }
   });
 });

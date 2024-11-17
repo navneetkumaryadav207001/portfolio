@@ -260,7 +260,7 @@ body {
     /* Styles go here */
     #change1{
       position: absolute;
-      z-index: 2;
+      z-index: 1;
       font-size: 25px;
     font-family: "Kablammo", system-ui;
     font-optical-sizing: auto;
@@ -281,7 +281,7 @@ body {
     }
     #change2{
       position: absolute;
-      z-index: 2;
+      z-index: 1;
       font-size: 25px;
     font-family: "Kablammo", system-ui;
     font-optical-sizing: auto;
