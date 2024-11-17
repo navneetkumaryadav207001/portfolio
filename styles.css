@@ -112,7 +112,7 @@ img {
   position: fixed;
   margin-top: 80vh;
   color: white;
-  font-size: 2vw;
+  font-size: 2.5vw;
   font-family: "Kablammo", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -158,6 +158,7 @@ img {
     font-style: normal;
     font-variation-settings:
       "MORF" 0;
+      
 
 }
 
@@ -165,8 +166,9 @@ img {
   z-index: 1;          /* Fade in */
   visibility: visible; /* Make it visible */
   margin-left: 3%;     /* Move it into view */
-  margin-top: 60vh;
+  margin-top: 55vh;
   transition: margin-left 0.3s ease, opacity 0.3s ease,margin-top 0.3s ease; /* Ensure smooth transitions */
+  width: 100px;
 }
 .face-right:hover + #professional {
   opacity: 1;          /* Fade in */
