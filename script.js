@@ -1,7 +1,34 @@
+function redirect(url,bool) {
+  console.log("clicked");
+  if (!isMobileDevice() || bool) {
+    console.log("redirecting");
+    window.location.href = url;
+  }
+}
+
+function PersonalGo()
+{
+  console.log("redirecting");
+  window.location.href = "/personal.html";
+}
+function ProffesionalGO()
+{
+  console.log("redirecting");
+  window.location.href = "/professional.html";
+}
+
+function isMobileDevice() {
+  return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+
+
 const faceLeft = document.querySelector('.face-left');
 const faceRight = document.querySelector('.face-right');
 const thunder = document.querySelector('.thunder');
-const personal = document.querySelector("#personal")
+const personal = document.querySelector("#personal");
+const change1 = document.querySelector("#change1");
+const change2 = document.querySelector("#change2")
 
 
 const hoverSound = new Audio('finger-snap1.mp3');
@@ -11,25 +38,37 @@ faceLeft.addEventListener('mouseenter', () => {
   thunder.style.boxShadow = '-10px 0px 25px 5px yellow';
   hoverSound.currentTime = 0; // Rewind to the start
     hoverSound.play();
+    if(isMobileDevice())
+    {
+      change1.style.display = "flex";
+    }
 });
 
 faceRight.addEventListener('mouseenter', () => {
   thunder.style.boxShadow = '10px 0px 25px 5px yellow';
   hoverSound.currentTime = 0; // Rewind to the start
     hoverSound.play();
+    if(isMobileDevice())
+      {
+        change2.style.display = "flex";
+      }
+    
 });
 
 [faceLeft, faceRight].forEach(face => {
   face.addEventListener('mouseleave', () => {
     thunder.style.boxShadow = '0 0px 5px 5px yellow';
+    if(isMobileDevice())
+      {
+        change1.style.display = "flex";
+        change2.style.display = "flex";
+      }
   });
 });
 
 
 function start(){
   document.getElementById("start").remove();
-  document.addEventListener('touchstart', handleTouchStart, false);        
-document.addEventListener('touchmove', handleTouchMove, false);
 }
 
 
@@ -79,13 +118,6 @@ function resetCursor()
 }
 let bool = false;
 
-function change()
-{
-  if(!bool)
-  {faceLeft.style.zIndex = 1; bool = true;}
-  else{faceLeft.style.zIndex = 0;bool = false;}
-}
-
 // Swipe detection function
 function onSignificantSwipe(container, callback, threshold = 50) {
   let touchStartX = 0;
@@ -122,6 +154,7 @@ function onSignificantSwipe(container, callback, threshold = 50) {
       if (isSwipe) {
           // If it was a swipe, prevent default action for the click
           event.preventDefault();
+          
       }
       // If it’s a normal click, let the default action occur
   });
@@ -136,13 +169,44 @@ onSignificantSwipe(container, (direction) => {
   switch (direction) {
       case 'left':
         if(!bool)
-          {faceLeft.style.zIndex = 1; bool = true;personal.style.opacity = 1;}
-          else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;}
+          {faceLeft.style.zIndex = 1; bool = true;personal.style.opacity = 1;if(isMobileDevice)
+            {
+              change1.style.display = "none";
+              change2.style.display = "none";
+            }}
+          else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;if(isMobileDevice)
+            {
+              change1.style.display = "none";
+              change2.style.display = "none";
+            }}
           break;
         case 'right':
           if(!bool)
-            {faceLeft.style.zIndex = 1; bool = true;personal.style.opacity = 1;}
-            else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;}
+            {faceLeft.style.zIndex = 1; bool = true;personal.style.opacity = 1;if(isMobileDevice)
+              {
+                change1.style.display = "none";
+                change2.style.display = "none";
+              }}
+            else{faceLeft.style.zIndex = 0;bool = false;personal.style.opacity = 0;if(isMobileDevice)
+              {
+                change1.style.display = "none";
+                change2.style.display = "none";
+              }}
             break;
   }
 });
+
+function handleResize() {
+  const div = document.getElementById("change");
+  if (window.innerWidth <= 600 && !isMobileDevice()) {
+    div.style.display = "flex";
+  } else {
+    div.style.display = "none";
+  }
+}
+
+// Attach the event listener
+window.addEventListener("resize", handleResize);
+
+// Initial check when the page loads
+handleResize();
