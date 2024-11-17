@@ -164,8 +164,8 @@ img {
 .face-left:hover + #personal {
   z-index: 1;          /* Fade in */
   visibility: visible; /* Make it visible */
-  margin-left: 0%;     /* Move it into view */
-  margin-top: 64vh;
+  margin-left: 3%;     /* Move it into view */
+  margin-top: 60vh;
   transition: margin-left 0.3s ease, opacity 0.3s ease,margin-top 0.3s ease; /* Ensure smooth transitions */
 }
 .face-right:hover + #professional {
@@ -227,17 +227,17 @@ body {
       display: none;
     }
     #personal {
-      font-size: 4.5vw;
-
+      font-size: 6vw;
+      width: 100px;
     }
  
     .face-right:hover + #professional {
       opacity: 1;          /* Fade in */
       visibility: visible; /* Make it visible */
-      margin-left: 72%;     /* Move it into view */
-      margin-top: 64vh;
+      margin-left: 62%;     /* Move it into view */
+      margin-top: 70vh;
       transition: margin-left 0.3s ease, opacity 0.3s ease,margin-top 0.3s ease; /* Ensure smooth transitions */
-      font-size: 15px;
+      font-size: 5vw;
     }
     
     #change{
@@ -268,8 +268,14 @@ body {
       "MORF" 0;
       margin-top: 85vh;
       margin-left:calc(50% - 43px);
-      color: #f0f0f0;
+      color: black;
       display: none;
+      border: 2px black solid;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
     }
     #change2{
       position: absolute;
@@ -283,8 +289,14 @@ body {
       "MORF" 0;
       margin-top: 85vh;
       margin-left:calc(50% - 43px);
-      color: #f0f0f0;
+      color: black;
       display: none;
+      border: 2px black solid;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
     }
     body {
       margin: 0;
