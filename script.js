@@ -6,16 +6,6 @@ function redirect(url,bool) {
   }
 }
 
-function PersonalGo()
-{
-  console.log("redirecting");
-  window.location.href = "/personal.html";
-}
-function ProffesionalGO()
-{
-  console.log("redirecting");
-  window.location.href = "/professional.html";
-}
 
 function isMobileDevice() {
   return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
