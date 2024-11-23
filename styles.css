@@ -124,15 +124,17 @@ img {
   padding-right: 2px;
   border: #0d5ee5;
   border-radius: 5px;
+  width: 100px;
 }
 #personal:hover{
   opacity: 1;          /* Fade in */
   visibility: visible; /* Make it visible */
-  margin-left: 0%;     /* Move it into view */
-  margin-top: 64vh;
+  margin-left: 3%;     /* Move it into view */
+  margin-top: 55vh;
   transition: margin-left 0.3s ease, opacity 0.3s ease,margin-top 0.3s ease;
   background-color: transparent;
   color: black;
+  width: 100px;
 }
 #professional:hover{
   opacity: 1;          /* Fade in */
